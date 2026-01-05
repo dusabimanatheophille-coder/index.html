@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINEVA - UNIVERSITAIRE ST. DOMINIQUE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary: #1e1b4b;
+            --gold: #b8860b;
+            --paper: #fcf9f2;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--paper);
+        }
+
+        h1, h2, h3, .nav-logo {
+            font-family: 'Cinzel', serif;
+        }
+
+        .religious-gradient {
+            background: linear-gradient(rgba(30, 27, 75, 0.92), rgba(30, 27, 75, 0.98)), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            background-color: #1e1b4b;
+        }
+
+        .glass-morphism {
+            background: rgba(252, 249, 242, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #b8860b;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #b8860b;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade { animation: fadeIn 0.8s ease-out forwards; }
+
+        optgroup {
+            font-weight: 900;
+            color: #b8860b;
+            text-transform: uppercase;
+            font-size: 10px;
+            background: #f8fafc;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-morphism">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-amber-900 rounded-full flex items-center justify-center text-amber-100 font-bold border-2 border-amber-600 shadow-lg">M</div>
+                <div class="flex flex-col">
+                    <span class="nav-logo text-xl font-black text-amber-900 tracking-tighter leading-none">MINEVA</span>
+                    <span class="text-[8px] font-black text-amber-700 uppercase tracking-widest">Universitaire St. Dominique</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-600">
+                <a href="#home" class="nav-link text-amber-900">Home</a>
+                <a href="#register" class="nav-link">Register</a>
+                <a href="#directory" class="nav-link">Directory</a>
+                <a href="#chat" class="nav-link">Community Chat</a>
+            </div>
+
+            <div id="online-status" class="text-[9px] font-bold text-green-600 uppercase flex items-center gap-1">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                Live
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="religious-gradient py-24 px-6 text-center border-b-8 border-amber-700">
+        <div class="max-w-3xl mx-auto text-white animate-fade">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 text-amber-50 uppercase tracking-tighter">St. Dominique</h1>
+            <p class="text-amber-400 font-serif italic text-lg tracking-[0.4em] uppercase mb-8">URUMURI - Light of the World</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                <div class="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
+                    <p class="text-2xl font-black text-amber-400" id="stat-count-hero">0</p>
+                    <p class="text-[8px] uppercase tracking-widest text-white/60">Members</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
+                    <p class="text-2xl font-black text-amber-400">4</p>
+                    <p class="text-[8px] uppercase tracking-widest text-white/60">Families</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
+                    <p class="text-2xl font-black text-amber-400">30</p>
+                    <p class="text-[8px] uppercase tracking-widest text-white/60">Districts</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-4 rounded-xl text-center">
+                    <p class="text-2xl font-black text-amber-400 uppercase tracking-tighter">Burera</p>
+                    <p class="text-[8px] uppercase tracking-widest text-white/60">HQ Location</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Column: Registration -->
+        <div class="lg:col-span-4">
+            <section id="register" class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border-t-8 border-amber-800 sticky top-28">
+                <div class="p-8 text-center bg-slate-50 border-b border-slate-100">
+                    <h3 class="font-black text-indigo-950 text-xl uppercase tracking-tighter">Enrollment</h3>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Join the community</p>
+                </div>
+                <form id="appForm" class="p-8 space-y-5">
+                    <div>
+                        <label class="text-[9px] font-black uppercase text-slate-400 mb-2 block tracking-widest">Full Name</label>
+                        <input type="text" id="name" required placeholder="Full Name" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-amber-600 transition-all">
+                    </div>
+                    <div>
+                        <label class="text-[9px] font-black uppercase text-slate-400 mb-2 block tracking-widest">Family</label>
+                        <select id="family" required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-amber-600 appearance-none">
+                            <option value="" disabled selected>Select Family...</option>
+                            <option>St. Paul</option>
+                            <option>St. Dominic</option>
+                            <option>Inshuti za BikiraMariya</option>
+                            <option>St. Litha</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[9px] font-black uppercase text-slate-400 mb-2 block tracking-widest">District</label>
+                        <select id="district" required class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-amber-600 appearance-none">
+                            <option value="" disabled selected>Select District...</option>
+                            <optgroup label="Kigali City">
+                                <option>Gasabo</option><option>Kicukiro</option><option>Nyarugenge</option>
+                            </optgroup>
+                            <optgroup label="Eastern Province">
+                                <option>Bugesera</option><option>Gatsibo</option><option>Kayonza</option><option>Kirehe</option><option>Ngoma</option><option>Nyagatare</option><option>Rwamagana</option>
+                            </optgroup>
+                            <optgroup label="Northern Province">
+                                <option>Burera</option><option>Gakenke</option><option>Gicumbi</option><option>Musanze</option><option>Rulindo</option>
+                            </optgroup>
+                            <optgroup label="Southern Province">
+                                <option>Gisagara</option><option>Huye</option><option>Kamonyi</option><option>Muhanga</option><option>Nyamagabe</option><option>Nyanza</option><option>Nyaruguru</option><option>Ruhango</option>
+                            </optgroup>
+                            <optgroup label="Western Province">
+                                <option>Karongi</option><option>Ngororero</option><option>Nyabihu</option><option>Nyamasheke</option><option>Rubavu</option><option>Rusizi</option><option>Rutsiro</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[9px] font-black uppercase text-slate-400 mb-2 block tracking-widest">Phone Number</label>
+                        <input type="tel" id="tel" required placeholder="078..." class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-amber-600">
+                    </div>
+                    <button type="submit" class="w-full bg-amber-900 text-white font-black py-5 rounded-2xl shadow-xl hover:bg-amber-800 transition-all uppercase text-[10px] tracking-[0.3em]">Register</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Right Column: Directory & Chat -->
+        <div class="lg:col-span-8 space-y-12">
+            
+            <!-- Directory Table -->
+            <section id="directory" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-amber-100">
+                <div class="p-6 bg-white border-b border-slate-50 flex justify-between items-center">
+                    <h3 class="font-black text-indigo-950 uppercase tracking-tighter">Verified Directory</h3>
+                    <div class="px-3 py-1 bg-amber-50 text-amber-700 text-[9px] font-black rounded-full uppercase" id="stat-count">0 Members</div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 text-slate-400 text-[9px] uppercase font-black tracking-widest">
+                            <tr>
+                                <th class="px-8 py-4">Name & District</th>
+                                <th class="px-8 py-4">Family</th>
+                                <th class="px-8 py-4 text-right">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="directoryBody" class="text-sm"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Community Chat -->
+            <section id="chat" class="bg-slate-900 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col h-[600px] border-4 border-slate-800">
+                <div class="p-6 bg-slate-800 flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center text-xs font-black text-white">C</div>
+                    <p class="text-xs font-black text-white uppercase tracking-widest">Community Chat</p>
+                </div>
+                <div id="chatMessages" class="flex-1 p-8 overflow-y-auto space-y-6 bg-slate-900"></div>
+                <form id="chatForm" class="p-6 bg-slate-800 border-t border-slate-700">
+                    <div class="flex gap-3">
+                        <input type="text" id="chatInput" placeholder="Enter message..." class="flex-1 bg-slate-900 text-white rounded-2xl px-6 py-4 text-sm outline-none border border-slate-700 focus:border-amber-600">
+                        <button type="submit" class="bg-amber-600 text-white px-8 rounded-2xl font-black uppercase text-[10px] tracking-widest">Send</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 text-white py-16 text-center border-t-4 border-amber-900">
+        <h2 class="nav-logo text-3xl font-black text-amber-500 mb-2 uppercase tracking-tighter">MINEVA</h2>
+        <p class="text-[9px] font-black text-slate-600 uppercase tracking-widest">Digital Infrastructure Created by Theophille</p>
+    </footer>
+
+    <script>
+        const STORE_KEY = 'mineva_v1';
+        const CHAT_KEY = 'mineva_chat_v1';
+
+        function refresh() {
+            const data = JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+            document.getElementById('stat-count').innerText = `${data.length} Members`;
+            document.getElementById('stat-count-hero').innerText = data.length;
+
+            const tbody = document.getElementById('directoryBody');
+            tbody.innerHTML = data.map(m => `
+                <tr class="border-b border-slate-50">
+                    <td class="px-8 py-5 font-bold text-indigo-950">${m.name}<br><span class="text-[9px] text-slate-400 font-normal uppercase">${m.district}</span></td>
+                    <td class="px-8 py-5"><span class="text-[9px] font-black uppercase bg-amber-100 text-amber-800 px-3 py-1 rounded-full">${m.family}</span></td>
+                    <td class="px-8 py-5 text-right italic text-slate-400 text-xs">${m.date}</td>
+                </tr>
+            `).join('');
+            loadChat();
+        }
+
+        document.getElementById('appForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+            data.unshift({
+                name: document.getElementById('name').value,
+                family: document.getElementById('family').value,
+                district: document.getElementById('district').value,
+                date: new Date().toLocaleDateString('en-GB', {day:'2-digit', month:'short'})
+            });
+            localStorage.setItem(STORE_KEY, JSON.stringify(data));
+            document.getElementById('appForm').reset();
+            refresh();
+        });
+
+        function loadChat() {
+            const msgs = JSON.parse(localStorage.getItem(CHAT_KEY) || '[]');
+            const container = document.getElementById('chatMessages');
+            container.innerHTML = msgs.map(m => `
+                <div class="flex flex-col items-start animate-fade">
+                    <div class="bg-slate-800 p-5 rounded-3xl rounded-tl-none border border-slate-700 text-slate-200 text-sm max-w-[85%] shadow-lg">
+                        <p>${m.text}</p>
+                        <span class="text-[8px] text-slate-500 font-bold uppercase mt-2 block">${m.time}</span>
+                    </div>
+                </div>
+            `).join('');
+            container.scrollTop = container.scrollHeight;
+        }
+
+        document.getElementById('chatForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            if(!input.value.trim()) return;
+            const msgs = JSON.parse(localStorage.getItem(CHAT_KEY) || '[]');
+            msgs.push({ text: input.value, time: new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) });
+            localStorage.setItem(CHAT_KEY, JSON.stringify(msgs));
+            input.value = '';
+            loadChat();
+        });
+
+        refresh();
+    </script>
+</body>
+</html>
